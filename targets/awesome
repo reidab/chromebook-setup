@@ -9,9 +9,9 @@ CHROOTBIN='startawesome'
 
 echo "Installing awesome xinitrc into the chroot /etc..." 1>&2
 $SIMULATE mkdir -p "$CHROOT/etc/xdg/awesome"
-src="${CHROOTETCDIR:-../chroot-etc}/$f"
+src="${CHROOTETCDIR:-../chroot-etc}/xinitrc"
 $SIMULATE cp -fP "$src" "$CHROOT/etc/xdg/awesome/"
-[ ! -h "$src" ] && $SIMULATE chmod 644 "$CHROOT/etc/xdg/awesome/$f"
+[ ! -h "$src" ] && $SIMULATE chmod 644 "$CHROOT/etc/xdg/awesome/xinitrc"
 
 . "${TARGETSDIR:="$PWD"}/common"
 
