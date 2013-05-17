@@ -34,7 +34,7 @@ done
 apt-get update
 
 apt-get -y install \
-    awesome awesome-extras `noauto dictionaries-common hddtemp xorg`
+    awesome awesome-extra vim htop `noauto dictionaries-common hddtemp xorg`
 
 TIPS="$TIPS
 You can start awesome via the startawesome host command: sudo startawesome
