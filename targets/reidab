@@ -1,0 +1,15 @@
+#!/bin/sh -e
+# Copyright (c) 2013 The Chromium OS Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+REQUIRES='chrome-beta awesome'
+DESCRIPTION='Installs extra packages for reidab'
+
+. "${TARGETSDIR:="$PWD"}/common"
+
+### Append to prepare.sh:
+
+# Update database
+apt-get update
+
+apt-get -y install vim vim-gtk git htop ack autojump zsh zsh-lovers wget ssh

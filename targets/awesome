@@ -1,0 +1,29 @@
+#!/bin/sh -e
+# Copyright (c) 2013 The Chromium OS Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+REQUIRES='chromium gtk-extra'
+DESCRIPTION='Installs the awesome desktop environment.'
+HOSTBIN='startawesome'
+CHROOTBIN='startawesome'
+CHROOTETC='xinitrc'
+
+echo "Installing awesome xinitrc into the chroot /etc..." 1>&2
+$SIMULATE mkdir -p "$CHROOT/etc/xdg/awesome"
+src="${CHROOTETCDIR:-../chroot-etc}/$f"
+$SIMULATE cp -fP "$src" "$CHROOT/etc/xdg/awesome/"
+[ ! -h "$src" ] && $SIMULATE chmod 644 "$CHROOT/etc/xdg/awesome/$f"
+
+. "${TARGETSDIR:="$PWD"}/common"
+
+### Append to prepare.sh:
+
+# Update database
+apt-get update
+
+apt-get -y install \
+    awesome awesome-extra man-db `noauto dictionaries-common hddtemp xorg`
+
+TIPS="$TIPS
+You can start awesome via the startawesome host command: sudo startawesome
+"
