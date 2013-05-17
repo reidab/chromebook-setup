@@ -11,7 +11,7 @@ wget http://goo.gl/fd3zc -O "$TEMP/crouton"
 sh -e "$TEMP/crouton" -x "$WORK"
 tar xzf "$TEMP/reidab-chromebook-setup.tar.gz" -C $WORK --strip-components 1
 
-ls $WORK
+sudo sh -e $WORK/installer/main.sh -n reidab -t reidab
 
 trap 'rm -rf "$TEMP" >/dev/null 2>&1' 0
 trap "exit 2" 1 2 3 15
