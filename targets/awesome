@@ -6,7 +6,6 @@ REQUIRES='chromium gtk-extra'
 DESCRIPTION='Installs the awesome desktop environment.'
 HOSTBIN='startawesome'
 CHROOTBIN='startawesome'
-CHROOTETC='xinitrc'
 
 echo "Installing awesome xinitrc into the chroot /etc..." 1>&2
 $SIMULATE mkdir -p "$CHROOT/etc/xdg/awesome"
