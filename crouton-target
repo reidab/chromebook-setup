@@ -18,15 +18,22 @@ echo "echo 'Installing target $TARGET...' 1>&2"
 for f in $LOCAL_HOSTBIN; do
     echo "Installing $f into the host..." 1>&2
     src="${../host-bin}/$f"
+    echo "==============="
+    echo $src
+    echo "==============="
     $SIMULATE cp -fP "$src" "$BIN/"
     [ ! -h "$src" ] && $SIMULATE chmod 755 "$BIN/$f"
 done
 for f in $LOCAL_CHROOTBIN; do
     echo "Installing $f into the chroot..." 1>&2
     src="${../chroot-bin}/$f"
+    echo "==============="
+    echo $src
+    echo "==============="
     $SIMULATE cp -fP "$src" "$CHROOT/usr/local/bin/"
     [ ! -h "$src" ] && $SIMULATE chmod 755 "$CHROOT/usr/local/bin/$f"
 done
+
 
 ### Append to prepare.sh:
 
