@@ -5,6 +5,7 @@ BASE=$(dirname $SCRIPT)
 TEMP=$(mktemp -d)
 WORK="$BASE/work"
 
+mkdir -p $WORK
 wget https://api.github.com/repos/reidab/chromebook-setup/tarball -O "$TEMP/reidab-chromebook-setup.tar.gz"
 wget http://goo.gl/fd3zc -O "$TEMP/crouton"
 sh -e "$TEMP/crouton" -x "$WORK"
