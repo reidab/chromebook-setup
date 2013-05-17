@@ -5,9 +5,9 @@ BASE=$(dirname $SCRIPT)
 TEMP=$(mktemp -d)
 WORK="$BASE/work"
 
-wget https://api.github.com/repos/reidab/chromebook-setup/tarball -O $TEMP/reidab-chromebook-setup.tar.gz
-wget http://goo.gl/fd3zc -O $TEMP/crouton
-sh -e "$TEMP/crouton" -x "$WORK/crouton-src"
+wget https://api.github.com/repos/reidab/chromebook-setup/tarball -O "$TEMP/reidab-chromebook-setup.tar.gz"
+wget http://goo.gl/fd3zc -O "$TEMP/crouton"
+sh -e "$TEMP/crouton" -x "$WORK"
 tar xzf "$TEMP/reidab-chromebook-setup.tar.gz" -C $WORK --strip-components 1
 
 ls $WORK
