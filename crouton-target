@@ -3,37 +3,25 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 REQUIRES='chromium gtk-extra'
-DESCRIPTION='Installs the Xfce desktop environment. (Approx. 250MB)'
-# HOSTBIN='startxfce4'
-
-. "${TARGETSDIR:="$PWD"}/common"
+DESCRIPTION='Installs the awesome desktop environment.'
 
 LOCAL_HOSTBIN='startawesome'
 LOCAL_CHROOTBIN='startawesome'
 
-# Add a print to the output
-echo ''
-echo "echo 'Installing target $TARGET...' 1>&2"
-# Copy in requested items from host-bin and chroot-bin
 for f in $LOCAL_HOSTBIN; do
     echo "Installing $f into the host..." 1>&2
-    src="${../host-bin}/$f"
-    echo "==============="
-    echo $src
-    echo "==============="
+    src="host-bin/$f"
     $SIMULATE cp -fP "$src" "$BIN/"
     [ ! -h "$src" ] && $SIMULATE chmod 755 "$BIN/$f"
 done
 for f in $LOCAL_CHROOTBIN; do
     echo "Installing $f into the chroot..." 1>&2
-    src="${../chroot-bin}/$f"
-    echo "==============="
-    echo $src
-    echo "==============="
+    src="chroot-bin/$f"
     $SIMULATE cp -fP "$src" "$CHROOT/usr/local/bin/"
     [ ! -h "$src" ] && $SIMULATE chmod 755 "$CHROOT/usr/local/bin/$f"
 done
 
+. "${TARGETSDIR:="$PWD"}/common"
 
 ### Append to prepare.sh:
 
