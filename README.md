@@ -6,7 +6,7 @@ This is mostly for my own use, so things will change wildly and without notice.
 
 Most of the heavy lifting of building a Ubuntu-based chroot environment is done by [crouton](https://github.com/dnschneid/crouton), with a few convient wrappers and utilities thrown in to make things easier.
 
-The files in this repo get merged with crouton's directory structure to produce a crouton environment with extra targets. This is a little whacky[^1], but it works.
+The files in this repo get merged with crouton's directory structure to produce a crouton environment with extra targets. This is a little whacky, but it works. (Originally, I had been hoping to use crouton's -T option (for passing in a target file), but its method of copying config files seems works best with files in its environment.)
 
 ## Installation
 
@@ -27,8 +27,3 @@ This repo contains:
 
 * awesome - Installs the [awesome](http://awesome.naquadah.org/) window manager
 * reidab - Installs all the extra packages I want on my system
-
-
-
-
-[^1]: Originally, I had been hoping to use crouton's -T option (for passing in a target file), but its method of copying config files seems works best with files in its environment.
