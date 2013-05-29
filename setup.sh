@@ -19,6 +19,17 @@ echo "Extracting..."
 sh -e "$TEMP/crouton" -x "$WORK"
 tar xzf "$TEMP/reidab-chromebook-setup.tar.gz" -C $WORK --strip-components 1
 
+echo "Looking for support on external media..."
+EXT=$(find /media/removable -maxdepth 2 -name chromebook-setup -type d)
+if [ ! -z $EXT ]; then
+  echo "Found $EXT"
+fi
+
+# if [ -d "$CHROOT_DIR/home/$USER" ]; then
+#   echo "Backing up existing home directory..."
+#   mkdir -p $WORK/backups
+#   tar czf $WORK/
+# fi
 
 sudo sh -e $WORK/installer/main.sh -n $CHROOT_NAME -t reidab
 
