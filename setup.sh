@@ -1,4 +1,4 @@
-#! /bin/sh -e
+#!/bin/sh -e
 
 USER="reidab"
 CHROOT_NAME=$USER
