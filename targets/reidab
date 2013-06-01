@@ -12,4 +12,4 @@ DESCRIPTION='Installs extra packages for reidab'
 # Update database
 apt-get update
 
-apt-get -y install pidgin xchat vim vim-gtk git htop ack autojump zsh zsh-lovers wget ssh tmux
+apt-get -y install pidgin xchat vim vim-gtk git htop ack autojump zsh zsh-lovers wget ssh tmux ttf-mscorefonts-installer fonts-roboto
