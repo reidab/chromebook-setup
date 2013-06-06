@@ -40,3 +40,9 @@ Or verbosely:
 
     sudo tar -pvc -C /usr/local/chroots --transform="s/^reidab/precise-armhf/" --show-transformed-names -f /media/removable/USB/chromebook-setup/snapshot.tar.gz reidab
 
+### Firefox
+
+I'd like to be able to run the Firefox beta channel, to stay in sync
+with my main laptop, but it seems that Launchpad's PPA build service
+doesn't support armhf. Compiling from source seems feasable, but I'd
+want to purge some of the build dependencies from the image afterwards.
