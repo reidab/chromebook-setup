@@ -13,3 +13,6 @@ DESCRIPTION='Installs extra packages for reidab'
 apt-get update
 
 apt-get -y install firefox pidgin xchat vim vim-gtk git htop ack autojump zsh zsh-lovers wget ssh tmux ttf-mscorefonts-installer fonts-roboto
+
+# Photo Processing
+apt-get -y install geeqie ufraw ufraw-batch gimp-ufraw rawtherapee rawstudio
